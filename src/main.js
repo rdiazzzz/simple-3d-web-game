@@ -45,10 +45,10 @@ export function onWindowResize() {
 window.addEventListener("resize", onWindowResize);
 
 // INIT CAMERA
-camera.position.z = 25;
-camera.position.x = 3;
-camera.position.y = 6;
-camera.lookAt(0, 0, -20);
+camera.position.z = 20;
+camera.position.x = 0;
+camera.position.y = 10;
+camera.lookAt(0, 10, -20);
 
 // INIT HEMISPHERE LIGHT
 scene.add(new THREE.AmbientLight(0xffffff, 0.5));
@@ -62,7 +62,6 @@ const skybox = skyboxloader.load([
     "src/skybox/bay_rt.jpg",
     "src/skybox/bay_lf.jpg",
 ]);
-
 scene.background = skybox;
 
 // FLOOR
@@ -99,49 +98,48 @@ fbxloader.load("src/player/player.fbx", (object) => {
 });
 
 // CONE
-const cone = new THREE.Mesh(
-    new THREE.ConeGeometry(2, 5, 64),
-    new THREE.MeshPhongMaterial({ color: 0xdbde40 })
-);
-cone.position.set(7, 2.5, 2.7);
-cone.receiveShadow = true;
-cone.castShadow = true;
-scene.add(cone);
+// const cone = new THREE.Mesh(
+//     new THREE.ConeGeometry(2, 5, 64),
+//     new THREE.MeshPhongMaterial({ color: 0xdbde40 })
+// );
+// cone.position.set(7, 2.5, 2.7);
+// cone.receiveShadow = true;
+// cone.castShadow = true;
+// scene.add(cone);
 
 // CYLINDER
-const cylinder = new THREE.Mesh(
-    new THREE.CylinderGeometry(1, 1, 6, 64),
-    new THREE.MeshPhongMaterial({ color: 0x3ea34c })
-);
-cylinder.position.set(3, 3, 2.7);
-cylinder.receiveShadow = true;
-cylinder.castShadow = true;
-scene.add(cylinder);
+// const cylinder = new THREE.Mesh(
+//     new THREE.CylinderGeometry(1, 1, 6, 64),
+//     new THREE.MeshPhongMaterial({ color: 0x3ea34c })
+// );
+// cylinder.position.set(3, 3, 2.7);
+// cylinder.receiveShadow = true;
+// cylinder.castShadow = true;
+// scene.add(cylinder);
 
 // TORUS
-const torus = new THREE.Mesh(
-    new THREE.TorusGeometry(2, 0.5, 64, 64),
-    new THREE.MeshPhongMaterial({ color: 0x2a7ab0 })
-);
-torus.position.set(-0.5, 2.5, 2.7);
-torus.rotateY(2.5);
-torus.receiveShadow = true;
-torus.castShadow = true;
-scene.add(torus);
+// const torus = new THREE.Mesh(
+//     new THREE.TorusGeometry(2, 0.5, 64, 64),
+//     new THREE.MeshPhongMaterial({ color: 0x2a7ab0 })
+// );
+// torus.position.set(-0.5, 2.5, 2.7);
+// torus.rotateY(2.5);
+// torus.receiveShadow = true;
+// torus.castShadow = true;
+// scene.add(torus);
 
-// DIRECTIONAL LIGHT
-const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-directionalLight.position.x += 20;
-directionalLight.position.y += 20;
-directionalLight.position.z += 20;
+// SUN LIGHT
+const directionalLight = new THREE.DirectionalLight(0xf9d71c, 1);
+directionalLight.position.x += -13;
+directionalLight.position.y += 17;
+directionalLight.position.z += -50;
 directionalLight.castShadow = true;
-directionalLight.shadow.mapSize.width = 4096;
-directionalLight.shadow.mapSize.height = 4096;
-const d = 25;
-directionalLight.shadow.camera.left = -d;
-directionalLight.shadow.camera.right = d;
-directionalLight.shadow.camera.top = d;
-directionalLight.shadow.camera.bottom = -d;
+directionalLight.shadow.mapSize.width = 512;
+directionalLight.shadow.mapSize.height = 512;
+directionalLight.shadow.camera.left = -25;
+directionalLight.shadow.camera.right = 25;
+directionalLight.shadow.camera.top = 25;
+directionalLight.shadow.camera.bottom = -25;
 scene.add(directionalLight);
 
 scene.add(new THREE.CameraHelper(directionalLight.shadow.camera));
