@@ -1,0 +1,11 @@
+Model Information:
+* title:	Girls' Frontline FNC
+* source:	https://sketchfab.com/3d-models/girls-frontline-fnc-b279f4891679498293a06976f5fb6342
+* author:	loyalists_dev (https://sketchfab.com/loyalists_dev)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Girls' Frontline FNC" (https://sketchfab.com/3d-models/girls-frontline-fnc-b279f4891679498293a06976f5fb6342) by loyalists_dev (https://sketchfab.com/loyalists_dev) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
